@@ -4,9 +4,8 @@ COPY pom.xml .
 COPY .mvn .mvn
 COPY mvnw mvnw
 COPY mvnw.cmd mvnw.cmd
-RUN ./mvnw -q -DskipTests package
 COPY src src
-RUN ./mvnw -q -DskipTests package
+RUN mvn -q -DskipTests package
 
 FROM eclipse-temurin:21-jre
 WORKDIR /app
